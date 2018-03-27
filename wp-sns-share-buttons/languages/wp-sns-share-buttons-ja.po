@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP SNS Share Buttons\n"
+"POT-Creation-Date: 2018-03-27 14:41+0900\n"
+"PO-Revision-Date: 2018-03-27 14:41+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wp-sns-share-buttons.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#. Plugin Name of the plugin/theme
+#: wp-sns-share-buttons.php:84 wp-sns-share-buttons.php:85
+msgid "WP SNS Share Buttons"
+msgstr ""
+
+#: wp-sns-share-buttons.php:111
+msgid "For details of setting, please see"
+msgstr "設定の詳細はこちらをご覧ください"
+
+#: wp-sns-share-buttons.php:123
+msgid "Account"
+msgstr "アカウント"
+
+#: wp-sns-share-buttons.php:131
+msgid "Tweet Button"
+msgstr "ツイートボタン"
+
+#: wp-sns-share-buttons.php:139 wp-sns-share-buttons.php:163
+#: wp-sns-share-buttons.php:195
+msgid "Follow Button"
+msgstr "フォロー ボタン"
+
+#: wp-sns-share-buttons.php:155 wp-sns-share-buttons.php:171
+msgid "Share Button"
+msgstr "シェアボタン"
+
+#: wp-sns-share-buttons.php:179
+msgid "Hatena Bookmark Button"
+msgstr "はてなブックマークボタン"
+
+#: wp-sns-share-buttons.php:187
+msgid "Pocket Button"
+msgstr "Pocketボタン"
+
+#: wp-sns-share-buttons.php:203
+msgid "Automatically display"
+msgstr "自動表示"
+
+#: wp-sns-share-buttons.php:211
+msgid "Share Count"
+msgstr "シェア数"
+
+#: wp-sns-share-buttons.php:219
+msgid "Do not use plugin's CSS"
+msgstr "プラグインのCSSを使わない"
+
+#: wp-sns-share-buttons.php:230 wp-sns-share-buttons.php:241
+#: wp-sns-share-buttons.php:253 wp-sns-share-buttons.php:264
+#: wp-sns-share-buttons.php:276 wp-sns-share-buttons.php:287
+#: wp-sns-share-buttons.php:298 wp-sns-share-buttons.php:338
+msgid "Show"
+msgstr "表示"
+
+#: wp-sns-share-buttons.php:231 wp-sns-share-buttons.php:242
+#: wp-sns-share-buttons.php:254 wp-sns-share-buttons.php:265
+#: wp-sns-share-buttons.php:277 wp-sns-share-buttons.php:288
+#: wp-sns-share-buttons.php:299 wp-sns-share-buttons.php:328
+#: wp-sns-share-buttons.php:339
+msgid "Hide"
+msgstr "非表示"
+
+#: wp-sns-share-buttons.php:244
+msgid "Twitter Account is required."
+msgstr "Twitter アカウントが必須です。"
+
+#: wp-sns-share-buttons.php:268
+msgid "Facebook URL is required."
+msgstr "Facebook URLが必須です。"
+
+#: wp-sns-share-buttons.php:308
+msgid "Enter Twitter account ID without\"@\""
+msgstr "\"@\"を付けずにTwitterアカウントIDを入力してください。"
+
+#: wp-sns-share-buttons.php:315
+msgid "Enter Facebook URL, after \"https://www.facebook.com/\"."
+msgstr ""
+"FacebookのURLを入力してください。（\"https://www.facebook.com/\" の後の部"
+"分）"
+
+#: wp-sns-share-buttons.php:342
+msgid "Installing plugin \"SNS Count Cache\" is required.."
+msgstr "プラグイン「SNS Count Cache」のインストールが必要です。"
+
+#: wp-sns-share-buttons.php:350
+msgid "After article"
+msgstr "記事の最後に表示"
+
+#: wp-sns-share-buttons.php:351
+msgid "Before article"
+msgstr "記事の最初に表示"
+
+#: wp-sns-share-buttons.php:352
+msgid "No (Use function and template)"
+msgstr "無効（関数とテンプレートを使用）"
+
+#. Plugin URI of the plugin/theme
+msgid "http://e-joint.jp/works/wp-sns-share-buttons/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A WordPress plugin that makes SNS Share and Follow Buttons easily."
+msgstr ""
+"SNSのシェア/フォローボタンを簡単に設置できるWordPressプラグインです。"
+
+#. Author of the plugin/theme
+msgid "e-JOINT.jp"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://e-joint.jp"
+msgstr ""
+
+#~ msgid "No"
+#~ msgstr "無効"
