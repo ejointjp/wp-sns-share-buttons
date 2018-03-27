@@ -3,7 +3,7 @@
 Plugin Name: WP SNS Share Buttons
 Plugin URI: http://e-joint.jp/works/wp-sns-share-buttons/
 Description: A WordPress plugin that makes SNS Share and Follow Buttons easily.
-Version: 0.1.2
+Version: 0.1.3
 Author: e-JOINT.jp
 Author URI: http://e-joint.jp
 Text Domain: wp-sns-share-buttons

@@ -4,7 +4,7 @@ Donate link:
 Tags: shortcode, quote, quotation, blockquote
 Requires at least: 4.0
 Tested up to: 4.9.4
-Stable tag: 0.1.1
+Stable tag: 0.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,7 +50,7 @@ An answer to that question.
 
 == Changelog ==
 
-= 0.1.1 =
+= 0.1.3 =
 
 * Bug Fix.
 
