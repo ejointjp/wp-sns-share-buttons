@@ -57,17 +57,17 @@ class WP_Sns_Share_Buttons_Buttons {
     if($this->options['follow-twitter'] !== '1' && $this->options['twitter-via']) {
       $button = new WP_Sns_Share_Buttons_Follow_Twitter();
       $button->show_count = !$this->options['hide-count'];
-      $this->share_buttons[] = $button;
+      $this->follow_buttons[] = $button;
     }
     if($this->options['follow-facebook'] !== '1' && $this->options['facebook-segment']) {
       $button = new WP_Sns_Share_Buttons_Follow_Facebook();
       $button->show_count = !$this->options['hide-count'];
-      $this->share_buttons[] = $button;
+      $this->follow_buttons[] = $button;
     }
     if($this->options['follow-feedly'] !== '1') {
       $button = new WP_Sns_Share_Buttons_Follow_Feedly();
       $button->show_count = !$this->options['hide-count'];
-      $this->share_buttons[] = $button;
+      $this->follow_buttons[] = $button;
     }
   }
 
