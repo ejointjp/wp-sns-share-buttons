@@ -5,7 +5,7 @@ class WP_Sns_Share_Buttons_Share_Twitter extends WP_Sns_Share_Buttons_Button {
   protected $api = 'https://twitter.com/intent/tweet';
   public $name = 'twitter';
   public $icon = 'icon-twitter';
-  public $label = 'Tweet';
+  public $label = 'Follow';
   public $width = 600;
   public $height = 473;
 
@@ -30,5 +30,9 @@ class WP_Sns_Share_Buttons_Share_Twitter extends WP_Sns_Share_Buttons_Button {
     if(function_exists('scc_get_share_twitter')) {
       return scc_get_share_twitter();
     }
+  }
+
+  public function get_label() {
+    return __('Share', 'wp-sns-share-buttons');
   }
 }

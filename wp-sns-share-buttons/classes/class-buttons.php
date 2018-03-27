@@ -106,7 +106,7 @@ class WP_Sns_Share_Buttons_Buttons {
   public function show($obj) {
     $html = sprintf('<a class="wpssb__item social-button__item--%s" %s>', $obj->name, $obj->props());
     $html .= sprintf('<i class="wpssb__icon %s"></i>', $obj->icon);
-    $html .= sprintf('<span class="wpssb__text">%s</span>', __($obj->label, $this->textdomain));
+    $html .= sprintf('<span class="wpssb__text">%s</span>', __($obj->get_label(), $this->textdomain));
     $html .= sprintf('<span class="wpssb__count">%s</span>', $obj->count_tag());
     $html .= '</a>';
 

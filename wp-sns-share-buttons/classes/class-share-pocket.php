@@ -5,7 +5,6 @@ class WP_Sns_Shere_Button_Share_Pocket extends WP_Sns_Share_Buttons_Button {
   protected $api = 'http://getpocket.com/edit';
   public $name = 'pocket';
   public $icon = 'icon-pocket';
-  public $label = 'Pocket';
   public $width = 500;
   public $height = 350;
 
@@ -20,5 +19,9 @@ class WP_Sns_Shere_Button_Share_Pocket extends WP_Sns_Share_Buttons_Button {
     if(function_exists('scc_get_share_pocket')) {
       return scc_get_share_pocket();
     }
+  }
+
+  public function get_label() {
+    return __('Pocket', 'wp-sns-share-buttons');
   }
 }

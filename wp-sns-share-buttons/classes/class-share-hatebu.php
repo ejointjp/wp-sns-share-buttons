@@ -21,4 +21,8 @@ class WP_Sns_Shere_Button_Share_Hatebu extends WP_Sns_Share_Buttons_Button {
       return scc_get_share_hatebu();
     }
   }
+
+  public function get_label() {
+    return __('Bookmark', 'wp-sns-share-buttons');
+  }
 }

@@ -5,7 +5,6 @@ class WP_Sns_Share_Buttons_Follow_Feedly extends WP_Sns_Share_Buttons_Button {
   protected $api = 'http://feedly.com/i/subscription/feed';
   public $name = 'feedly';
   public $icon = 'icon-feedly';
-  public $label = 'Follow';
   public $target = '_blank';
 
   public function __construct() {
@@ -39,5 +38,9 @@ class WP_Sns_Share_Buttons_Follow_Feedly extends WP_Sns_Share_Buttons_Button {
     if(function_exists('scc_get_follow_feedly')) {
       return scc_get_follow_feedly();
     }
+  }
+
+  public function get_label() {
+    return __('Follow', 'wp-sns-share-buttons');
   }
 }

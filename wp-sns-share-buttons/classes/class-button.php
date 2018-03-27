@@ -64,5 +64,6 @@ abstract class WP_Sns_Share_Buttons_Button {
     }
   }
 
+  abstract public function get_label();
   abstract public function count();
 }

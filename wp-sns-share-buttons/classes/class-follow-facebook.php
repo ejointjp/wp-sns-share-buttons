@@ -5,7 +5,6 @@ class WP_Sns_Share_Buttons_Follow_Facebook extends WP_Sns_Share_Buttons_Button {
   protected $api = 'https://www.facebook.com/';
   public $name = 'facebook';
   public $icon = 'icon-facebook';
-  public $label = 'Follow';
   public $page_segment;
   public $target = '_blank';
 
@@ -28,5 +27,9 @@ class WP_Sns_Share_Buttons_Follow_Facebook extends WP_Sns_Share_Buttons_Button {
     if(function_exists('scc_get_follow_facebook')) {
       return scc_get_follow_facebook();
     }
+  }
+
+  public function get_label() {
+    return __('Follow', 'wp-sns-share-buttons');
   }
 }
