@@ -378,9 +378,13 @@ class WP_Sns_Share_Buttons {
     $buttons = $buttons->show_all();
 
     if($this->options['auto'] === '1') {
-      $content = $buttons . $content;
+      return $buttons . $content;
+
     } else if($this->options['auto'] === '2') {
-      $content = $content . $buttons;
+      return $content;
+
+    } else {
+      return $buttons . $content;
     }
 
     return $content;
