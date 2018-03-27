@@ -389,10 +389,6 @@ class WP_Sns_Share_Buttons {
 
     return $content;
   }
-
-  public function show() {
-
-  }
 }
 
 $wpssb = new WP_Sns_Share_Buttons();
