@@ -3,7 +3,7 @@
 Plugin Name: WP SNS Share Buttons
 Plugin URI: http://e-joint.jp/works/wp-sns-share-buttons/
 Description: A WordPress plugin that makes SNS Share and Follow Buttons easily.
-Version: 0.1.3
+Version: 0.1.9
 Author: e-JOINT.jp
 Author URI: http://e-joint.jp
 Text Domain: wp-sns-share-buttons
@@ -43,7 +43,7 @@ class WP_Sns_Share_Buttons {
     'excludes' => 'toc-exclude'
   );
 
-  public function __construct(){
+  public function __construct() {
 
     $this->set_datas();
     $this->options = get_option('wpssb-setting');
@@ -57,9 +57,7 @@ class WP_Sns_Share_Buttons {
     add_action('admin_init', array($this, 'page_init'));
     add_action('wp_enqueue_scripts', array($this, 'add_styles'));
 
-    if($this->options['auto']) {
-      add_filter('the_content', array($this, 'the_content'));
-    }
+    add_filter('the_content', array($this, 'the_content'));
   }
 
   public function load_plugin_textdomain() {
@@ -95,17 +93,17 @@ class WP_Sns_Share_Buttons {
       <h2>WP SNS Share Buttons</h2>
       <?php
       global $parent_file;
-      if($parent_file != 'options-general.php') {
+      if ($parent_file != 'options-general.php') {
         require(ABSPATH . 'wp-admin/options-head.php');
       }
       ?>
 
       <form method="post" action="options.php">
-      <?php
+        <?php
         settings_fields('wpssb-setting');
         do_settings_sections('wpssb-setting');
         submit_button();
-      ?>
+        ?>
       </form>
 
       <p><?php echo __('For details of setting, please see', $this->textdomain); ?> <a href="http://e-joint.jp/works/wp-sns-share-buttons/">http://e-joint.jp/works/wp-sns-share-buttons/</a></p>
@@ -114,7 +112,7 @@ class WP_Sns_Share_Buttons {
   }
 
   // 設定画面の初期化
-  public function page_init(){
+  public function page_init() {
     register_setting('wpssb-setting', 'wpssb-setting');
     add_settings_section('wpssb-setting-section-id', '', '', 'wpssb-setting');
 
@@ -304,16 +302,16 @@ class WP_Sns_Share_Buttons {
 
   public function twitter_via_callback() {
     $value = isset($this->options['twitter-via']) ? esc_html($this->options['twitter-via']) : '';
-    ?><input type="text" class="" name="wpssb-setting[twitter-via]" value="<?php echo $value; ?>">
+  ?><input type="text" class="" name="wpssb-setting[twitter-via]" value="<?php echo $value; ?>">
     <small><?php echo __('Enter Twitter account ID without"@"', $this->textdomain); ?></small><br>
-    <?php
+  <?php
   }
 
   public function facebook_segment_callback() {
     $value = isset($this->options['facebook-segment']) ? esc_html($this->options['facebook-segment']) : '';
-    ?><input type="text" class="" name="wpssb-setting[facebook-segment]" value="<?php echo $value; ?>">
+  ?><input type="text" class="" name="wpssb-setting[facebook-segment]" value="<?php echo $value; ?>">
     <small><?php echo __('Enter Facebook URL, after "https://www.facebook.com/".', $this->textdomain); ?></small><br>
-    <?php
+  <?php
   }
 
   public function follow_feedly_callback() {
@@ -321,7 +319,7 @@ class WP_Sns_Share_Buttons {
     $feeds = array('rss2_url', 'rss_url', 'rdf_url', 'atom_url');
     $html = '<select name="wpssb-setting[follow-feedly]">';
 
-    foreach($feeds as $feed) {
+    foreach ($feeds as $feed) {
       $html .= sprintf('<option value="%s"%s>%s</option>', $feed, selected($this->options['follow-feedly'], $feed, false), get_bloginfo($feed));
     }
 
@@ -358,36 +356,48 @@ class WP_Sns_Share_Buttons {
 
   public function nocss_callback() {
     $checked = isset($this->options['nocss']) ? checked($this->options['nocss'], 1, false) : '';
-    ?><input type="checkbox" id="nocss" name="wpssb-setting[nocss]" value="1"<?php echo $checked; ?>><?php
+  ?><input type="checkbox" id="nocss" name="wpssb-setting[nocss]" value="1" <?php echo $checked; ?>>
+<?php
   }
 
   // スタイルシートの追加
+  // public function add_styles() {
+  //   if(!$this->options['nocss']) {
+  //     wp_enqueue_style('wpssb', plugins_url('assets/css/wp-sns-share-buttons.css', __FILE__), array(), $this->version, 'all');
+  //   }
+  // }
   public function add_styles() {
-    if(!isset($this->options['nocss']) || !$this->options['nocss']) {
-      if(!$this->options['nocss']) {
-        wp_enqueue_style('wpssb', plugins_url('assets/css/wp-sns-share-buttons.css', __FILE__), array(), $this->version, 'all');
+    // nocssオプションが未設定またはfalseの場合のみ実行
+    if (empty($this->options['nocss'])) {
+      $style_path = plugins_url('assets/css/wp-sns-share-buttons.css', __FILE__);
+
+      // スタイルファイルが存在する場合のみ読み込む
+      if (file_exists(plugin_dir_path(__FILE__) . 'assets/css/wp-sns-share-buttons.css')) {
+        wp_enqueue_style(
+          'wpssb', // ハンドル名
+          $style_path, // スタイルシートのURL
+          array(), // 依存関係（なし）
+          $this->version, // バージョン
+          'all' // 適用範囲
+        );
       }
-    } else {
-      wp_enqueue_style('wpssb', plugins_url('assets/css/wp-sns-share-buttons.css', __FILE__), array(), $this->version, 'all');
     }
   }
+
+
 
   public function the_content($content) {
 
     $buttons = new WP_Sns_Share_Buttons_Buttons;
     $buttons = $buttons->show_all();
 
-    if($this->options['auto'] === '1') {
+    if ($this->options['auto'] === '1') {
       return $buttons . $content;
-
-    } else if($this->options['auto'] === '2') {
+    } else if ($this->options['auto'] === '2') {
       return $content;
-
     } else {
-      return $buttons . $content;
+      return $content . $buttons;
     }
-
-    return $content;
   }
 }
 
@@ -395,10 +405,10 @@ $wpssb = new WP_Sns_Share_Buttons();
 
 function wp_sns_share_buttons() {
   $name = 'wpssb-template.php';
-  $custom = get_stylesheet_directory() . '/' . $name ;
+  $custom = get_stylesheet_directory() . '/' . $name;
   $default = 'template/' . $name;
 
-  if(file_exists($custom)) {
+  if (file_exists($custom)) {
     include $custom;
   } else {
     include $default;
